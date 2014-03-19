@@ -6,7 +6,7 @@ describe("checkout controller", function() {
     });
 
     it("increase total on click of add", function() {
-        controller.add();
+        controller.add('Kiwi');
         expect(controller.checkout.total()).toEqual(50);
     });
 });
