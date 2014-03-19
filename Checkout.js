@@ -9,9 +9,9 @@ function PriceList() {
     }
 }
 
-function Checkout() {
+function Checkout(priceList) {
     var total = 0;
-    this.priceList = new PriceList;
+    this.priceList = priceList;
 
     this.scan = function (item) {
         total += this.priceList.priceFor(item);
