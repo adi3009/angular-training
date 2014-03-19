@@ -1,5 +1,5 @@
-function CheckoutCtrl(checkout) {
-    this.checkout = checkout
+function CheckoutCtrl(Checkout) {
+    this.checkout = Checkout
 
     this.add = function(item) {
         this.checkout.scan(item);
