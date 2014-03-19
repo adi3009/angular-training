@@ -4,14 +4,14 @@
     <script type="text/javascript" src="http://sukima.github.com/jasmine-all/jasmine-all-min.js"></script>
     <script>
         function Checkout() {
-            this._total = 0;
+            var total = 0;
 
             this.scan = function (item) {
-                this._total += 50;
+                total += 50;
             }
 
             this.total = function () {
-                return this._total;
+                return total;
             }
         }
     </script>
@@ -26,7 +26,6 @@
             var checkout;
             beforeEach(function () {
                 checkout = new Checkout();
-                checkout._total = 0;
             });
 
             it("returns 0", function () {
