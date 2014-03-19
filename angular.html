@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script type="text/javascript" src="http://code.angularjs.org/1.2.9/angular.js"></script>
+    <script>
+        function AppCtrl($scope) {
+            $scope.numbers = []
+            $scope.sum = function (numbers) {
+                var total = 0;
+                for (var i = 0; i < numbers.length; i++) {
+                    total += parseInt(numbers[i]);
+                }
+
+                return total;
+            }
+
+            $scope.pushAndClear = function(number) {
+                $scope.numbers.push(number)
+                $scope.number = ''
+            }
+        }
+    </script>
+</head>
+<body ng-app>
+<div ng-controller="AppCtrl">
+    <ul>
+        <li ng-repeat="number in numbers track by $index">
+            {{number}}
+        </li>
+        The total is {{ sum(numbers) }}
+        <input ng-model="number">
+        <button ng-click="pushAndClear(number)">add</button>
+    </ul>
+</div>
+</body>
+</html>
