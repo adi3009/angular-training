@@ -1,7 +1,7 @@
 function PriceList() {
     this.prices = {
-        "Kiwi": { "price": 50 },
-        "Banana": { "price": 75 }
+        "Kiwi": { "price": 40 },
+        "Banana": { "price": 70 }
     };
 
     this.priceFor = function(item) {
@@ -15,7 +15,7 @@ function Checkout() {
 
     this.scan = function (item) {
         total += this.priceList.priceFor(item);
-    }
+    };
 
     this.total = function () {
         return total;

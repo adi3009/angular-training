@@ -8,19 +8,20 @@ describe("cart total", function () {
         expect(checkout.total()).toEqual(0);
     });
 
-    it("is 50 with one Kiwi", function () {
+    it("is equal to price of Kiwi", function () {
         checkout.scan('Kiwi');
-        expect(checkout.total()).toEqual(50);
+        expect(checkout.total()).toEqual(checkout.priceList.priceFor('Kiwi'));
     });
 
-    it("is 100 with two Kiwis", function () {
+    it("is equal to sum of prices of two Kiwis", function () {
         checkout.scan('Kiwi');
         checkout.scan('Kiwi');
-        expect(checkout.total()).toEqual(100);
+        var kiwiPrice = checkout.priceList.priceFor('Kiwi');
+        expect(checkout.total()).toEqual(kiwiPrice + kiwiPrice);
     });
 
-    it("is 75 when Bananas are scanned", function() {
+    it("is equal to price of Banana when Bananas are scanned", function() {
         checkout.scan("Banana");
-        expect(checkout.total()).toEqual(75);
+        expect(checkout.total()).toEqual(checkout.priceList.priceFor('Banana'));
     });
 });
