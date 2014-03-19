@@ -2,47 +2,14 @@
 <html>
 <head>
     <script type="text/javascript" src="http://sukima.github.com/jasmine-all/jasmine-all-min.js"></script>
-    <script>
-        function Checkout() {
-            var total = 0;
-
-            this.scan = function (item) {
-                total += 50;
-            }
-
-            this.total = function () {
-                return total;
-            }
-        }
-    </script>
-    <script>
-        describe("sum", function () {
-            it("should correctly add two numbers", function () {
-                expect(1 + 1).toEqual(2);
-            });
-        });
-
-        describe("cart total", function () {
-            var checkout;
-            beforeEach(function () {
-                checkout = new Checkout();
-            });
-
-            it("returns 0", function () {
-                expect(checkout.total()).toEqual(0);
-            });
-
-            it("is 50 with one Kiwi", function () {
-                checkout.scan('Kiwi');
-                expect(checkout.total()).toEqual(50);
-            });
-
-            it("is 100 with two Kiwis", function () {
-                checkout.scan('Kiwi');
-                checkout.scan('Kiwi');
-                expect(checkout.total()).toEqual(100);
-            });
-        });
-    </script>
+    <script type="text/javascript" src="http://code.angularjs.org/1.2.9/angular.js"></script>
+    <script type="text/javascript" src="Checkout.js"></script>
+    <script type="text/javascript" src="CheckoutCtrl.js"></script>
 </head>
+<body ng-app>
+    <div ng-controller="CheckoutCtrl as app">
+        Total: {{ app.checkout.total() }}
+        <button ng-click="app.add('Kiwi')">Add</button>
+    </div>
+</body>
 </html>
