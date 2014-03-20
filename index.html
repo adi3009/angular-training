@@ -6,11 +6,14 @@
     <script type="text/javascript" src="PriceList.js"></script>
     <script type="text/javascript" src="CheckoutCtrl.js"></script>
     <script type="text/javascript" src="CheckoutModule.js"></script>
+    <script type="text/javascript" src="ItemDirective.js"></script>
 </head>
 <body ng-app="CheckoutModule">
     <div ng-controller="CheckoutCtrl as app">
-        Total: {{ app.checkout.total() }}
-        <button ng-click="app.add('Kiwi')">Add</button>
+        <h2>Total: {{ app.checkout.total() }}</h2>
+        <item name="Kiwi" action="app.add(item)"></item>
+        <item name="Banana" action="app.add(item)"></item>
+        <item name="Orange" action="app.add(item)"></item>
     </div>
 </body>
 </html>
