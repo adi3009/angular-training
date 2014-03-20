@@ -11,13 +11,13 @@
 <body ng-app="CheckoutModule">
     <div ng-controller="CheckoutCtrl as app">
         <h2>Total: {{ app.checkout.total() }}</h2>
-        <item name="Kiwi" action="app.add(item)"></item>
-        <item name="Banana" action="app.add(item)"></item>
-        <item name="Orange" action="app.add(item)"></item>
+        <item name="Kiwi" action="app.add(item)">Add</item>
+        <item name="Banana" action="app.add(item)">Add</item>
+        <item name="Orange" action="app.add(item)">Add</item>
         <h2>Price check: {{app.checkedPrice}}</h2>
-        <item name="Kiwi" action="app.priceCheck(item)"></item>
-        <item name="Banana" action="app.priceCheck(item)"></item>
-        <item name="Orange" action="app.priceCheck(item)"></item>
+        <item name="Kiwi" action="app.priceCheck(item)">Check</item>
+        <item name="Banana" action="app.priceCheck(item)">Check</item>
+        <item name="Orange" action="app.priceCheck(item)">Check</item>
     </div>
 </body>
 </html>
