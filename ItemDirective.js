@@ -5,7 +5,7 @@ CheckoutModule.directive('item', function() {
             action: '&'
         },
         transclude: true,
-        template: '<button ng-click="action({ item:fruit })"><div ng-transclude></div>{{fruit}}</button>',
+        templateUrl: 'item.html',
         link: function(scope, element, attrs) {
             scope.fruit = attrs.name;
         }

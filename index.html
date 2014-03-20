@@ -9,6 +9,12 @@
     <script type="text/javascript" src="ItemDirective.js"></script>
 </head>
 <body ng-app="CheckoutModule">
+    <script type="text/ng-template" id="item.html">
+        <button ng-click="action({item:fruit})">
+            <div ng-transclude>
+            </div><img src="https://raw.github.com/chrismdp/angular-training-start/master/{{fruit}}.jpg" />
+        </button>
+    </script>
     <div ng-controller="CheckoutCtrl as app">
         <h2>Total: {{ app.checkout.total() }}</h2>
         <item name="Kiwi" action="app.add(item)">Add</item>
