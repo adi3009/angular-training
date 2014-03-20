@@ -3,7 +3,9 @@ function Checkout(PriceList) {
     this.priceList = PriceList;
 
     this.scan = function (item) {
-        total += this.priceList.priceFor(item);
+        this.priceList.priceFor(item).then(function(price) {
+            total += price;
+        });
     };
 
     this.total = function () {
